@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-width: 900px;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+ 
+.sidebar {
+    width: 320px;
+    width: 320px;
+    min-width: 320px;
+    padding: 20px;
+    background: #eeeeee;
+    border-right: 2px solid #cccccc;
+    overflow-y: auto;
+}
+
+
+.courts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 1000px;
+    max-width: 2400px;
+}
+
+.court-area {
+    flex: 1;
+    padding: 20px;
+    min-width: 0;
+}
+
+#player-pool {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.player {
+    width: 120px;
+    min-height: 78px;
+    background: white;
+    border: 2px solid #333333;
+    display: flex;
+    flex-direction: column;
+    cursor: grab;
+    font-weight: bold;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+.player-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    text-align: center;
+}
+
+.player-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid #333333;
+    font-size: 11px;
+}
+
+.player-stat {
+    padding: 3px;
+    text-align: center;
+    background: #eeeeee;
+}
+
+.player-stat:first-child {
+    border-right: 2px solid #333333;
+}
+
+.player.coach {
+    background: #ffe7b3;
+    border-color: #b36b00;
+}
+
+.coach-label {
+    font-size: 11px;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+.player[data-status="playing"] {
+    outline: 3px solid #4caf50;
+}
+
+.player[data-status="waiting"] {
+    outline: none;
+}
+
+.court-area {
+    flex: 1;
+    padding: 20px;
+}
+
+/* .courts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+} */
+
+@media (max-width: 1000px) {
+    .courts {
+        grid-template-columns: 1fr;
+    }
+}
+
+.court-card {
+    border: 2px solid #333333;
+    padding: 15px;
+    background: #f9f9f9;
+    min-width: 100px;
+}
+
+.court-dropzone {
+    min-height: 180px;
+    border: 3px dashed #888888;
+    background: #dff5df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.court-dropzone.full {
+    background: #ffd6d6;
+}
+
+.buttons {
+    margin-top: 12px;
+}
+
+button {
+    margin: 4px;
+    padding: 8px;
+}
+
+.court-card.ready {
+    background: #fff3cd;
+}
+
+.court-card.playing {
+    background: #d4edda;
+}
+
+.court-card.playing .court-dropzone {
+    border-style: solid;
+}
+
+.mode-menu {
+    margin-bottom: 20px;
+}
+
+.mode-btn {
+    padding: 10px 14px;
+    margin-right: 8px;
+}
+
+.mode-btn.active {
+    font-weight: bold;
+    border: 3px solid #333333;
+}
+
+.court-dropzone {
+    min-height: 220px;
+    border: 3px dashed #888888;
+    background: #dff5df;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    padding: 8px;
+}
+
+.court-half {
+    border: 2px solid #333333;
+    background: rgba(255, 255, 255, 0.5);
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 200px;
+}
+
+.court-half p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+}
+
+.court-card.disabled {
+    background: #888888;
+    border-color: #555555;
+}
+
+.court-card.disabled .court-dropzone {
+    background: #777777;
+    border-color: #555555;
+}
+
+.court-card.disabled .court-half {
+    background: #999999;
+    border-color: #666666;
+}
+
+.court-card.disabled button {
+    background: #aaaaaa;
+}
+
+.court-card.disabled h2,
+.court-card.disabled p {
+    color: #444444;
+}
+
+.court-mode {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.court-mode-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #aaa;
+    background: #eee;
+    cursor: pointer;
+}
+
+.court-mode-btn.active {
+    background: #2196f3;
+    color: white;
+    border: 2px solid #0d47a1;
+}
+
+#match-history-panel {
+    margin-top: 10px;
+}
+
+.match-history-item {
+    background: white;
+    border: 2px solid #333333;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.empty-history {
+    font-size: 12px;
+    color: #666666;
+}
+
+.suggest-panel {
+    margin-bottom: 20px;
+}
+
+.suggest-panel select,
+.suggest-panel button {
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 6px;
+}
+
+.suggestion-card {
+    background: white;
+    border: 2px solid #333333;
+    padding: 8px;
+    font-size: 12px;
+}
+
+/* .suggestion-card {
+    position: relative;
+    background: white;
+    border: 2px solid #333333;
+    padding: 8px;
+    font-size: 12px;
+} */
+
+.close-suggestion-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.send-buttons button {
+    width: 15%;
+    margin-top: 4px;
+}
+
+.add-player-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0;
+}
+
+.add-player-panel input,
+.add-player-panel select,
+.add-player-panel button {
+    padding: 6px;
+}
+
+/* .player {
+    position: relative;
+}
+
+.remove-player-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: none;
+    background: #dddddd;
+    cursor: pointer;
+    font-size: 12px;
+} */
+
+.remove-player-btn {
+    border: none;
+    border-top: 1px solid #cccccc;
+    background: #f5f5f5;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 11px;
+    width: 200%;
+    margin: 0;
+}
+
+.remove-player-btn:hover {
+    background: #ffaaaa;
+}
+.remove-player-btn:hover {
+    background: #ffaaaa;
+}
+
+/* .court-card.approaching-average {
+    background: #ffd89b;
+    border-color: #ff9800;
+} */
+
+.court-card.approaching-average .timer-display {
+    color: #b85c00;
+    font-weight: bold;
+}
+
+.match-average-card {
+    background: #fff3cd;
+    border: 2px solid #cc9900;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+/* @media (max-width: 900px) {
+    body {
+        min-width: 0;
+    }
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: none;
+        border-right: none;
+        border-bottom: 2px solid #cccccc;
+    }
+
+    .courts {
+        grid-template-columns: 1fr;
+    }
+} */
