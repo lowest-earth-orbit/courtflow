@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     restoreCourtFlowState();
 
     const clearButton =
-        document.getElementById("clear-courtflow") ||
+        document.getElementById("clear-courtflow")
         // document.getElementById("clear-courtflow-button") ||
         // document.getElementById("clear-all-btn");
 
