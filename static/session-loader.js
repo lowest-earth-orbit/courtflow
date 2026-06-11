@@ -55,6 +55,10 @@ async function loadSession(sessionName) {
 
     initialisePlayerStats();
     updateAllPlayerDisplays();
+    
+    if (typeof saveCourtFlowState === "function") {
+        saveCourtFlowState();
+    }
 }
 
 const sessionSelect = document.getElementById("session-select");
@@ -65,6 +69,7 @@ if (sessionSelect) {
 
         if (!sessionName) {
             playerPool.innerHTML = "";
+            saveCourtFlowState();
             return;
         }
 

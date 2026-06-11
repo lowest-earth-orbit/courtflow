@@ -226,6 +226,9 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# stuff 
+*zip
+
 # Streamlit
 .streamlit/secrets.toml
 >>>>>>> 7ebc96bcfc7fea81d66e4ac2ce9f16729a14a103

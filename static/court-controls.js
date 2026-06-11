@@ -19,6 +19,9 @@
 
 //     updateCourtReadyState(courtCard);
 // }
+
+
+// send a match to court
 function sendMatchToCourt(courtCard, suggestion) {
     if (!suggestion) return;
 
@@ -51,6 +54,8 @@ function sendMatchToCourt(courtCard, suggestion) {
     updateCourtReadyState(courtCard);
 }
 
+
+// reset the court
 function resetCourt(courtCard, shouldLogMatch = false) {
     const dropzone = courtCard.querySelector(".court-dropzone");
     const startStopButton = courtCard.querySelector(".start-stop-btn");
