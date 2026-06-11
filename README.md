@@ -29,7 +29,7 @@ Players can be deleted and added, or coaches can be assigned - they do not autom
 * AI fixed-angle video to keep track of scores.
 * Court Scaling: Default is 4 at the moment but some users may have less or more.
 
-# QuickStart
+## QuickStart
 
 1. Choose a session from the dropdown. At the moment this is hardcoded and fixed for demos, but ideally this would read actual sign up sheets/court availability/be time aware.
 2. Select 'Start Session' - this will start the timer for how long players are waiting for a match.
@@ -42,8 +42,15 @@ Players can be deleted and added, or coaches can be assigned - they do not autom
 9. If you want to suggest a next match, click the Suggest Match button - this only picks from the pool of available players at the moment though. You can send this matchmaking to a court via the buttons labelled 1-4.
 10. At the end of the session - click End Session. Voila!
 
-# The Rest
+## The Rest
 
 As mentioned, this is a currently in-development project and so is quite clunky and not optimal yet. Hopefully I will continue to make improvements.
 
 If you wish to help contribute, please do feel free to, or if you have any ideas please feel free to open an Issue on GitHub.
+
+## Current Issues
+
+* Average match timer is a bit janky. Don't rely on it too much.
+* A page refresh will refresh everything and lose progress.
+* No queue for players who are already on - will result in repeated pairings and matches.
+* pairing/match making logic not tight yet.
