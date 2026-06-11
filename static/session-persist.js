@@ -150,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const clearButton =
         document.getElementById("clear-courtflow") ||
-        document.getElementById("clear-courtflow-button");
+        document.getElementById("clear-courtflow-button") ||
+        document.getElementById("clear-all-btn");
 
     if (clearButton) {
         clearButton.addEventListener("click", clearCourtFlow);
